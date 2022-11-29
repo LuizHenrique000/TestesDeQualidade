@@ -1,36 +1,27 @@
-package tests;
+package americanasTests;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.MagazineLuiza;
+import pages.Americanas;
 
-public class MagazineLuizaTest {
-	
+public class PesquisarPorMarteloTest {
+
 	static WebDriver driver;
-	
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		System.setProperty("webdriver.chrome.driver", "C:\\webdriver\\chromedriver.exe");
 		driver = new ChromeDriver();
-		MagazineLuiza magazineLuiza = new MagazineLuiza(driver);
+		Americanas americanas = new Americanas(driver);
 		driver.manage().window().maximize();
 	}
 	
 	@Test
-	public void deveAcessarPagina() {
-		MagazineLuiza.acessarPagina();
+	public void devePesquisarMartelo() {
+		Americanas.acessarPagina();
+		Americanas.clicarNaCaixaDePesquisaEDigitarMartelo();
+		Americanas.capturarMensagemDeRetornoMartelo();
 	}
-	
-	@Test
-	public void devePesquisarNoInput() {
-		MagazineLuiza.clicarNaCaixaDePesquisaEDigitar();
-	}
-	
-	@Test
-	public void deveCapturarMensagemDeErro() {
-		MagazineLuiza.capturaMensagemDeErro();
-	}
-
 }

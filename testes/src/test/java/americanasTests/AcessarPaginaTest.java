@@ -1,4 +1,4 @@
-package tests;
+package americanasTests;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.Americanas;
 
-public class AmericanasTest {
+public class AcessarPaginaTest {
 
 	static WebDriver driver;
 
@@ -17,25 +17,10 @@ public class AmericanasTest {
 		Americanas americanas = new Americanas(driver);
 		driver.manage().window().maximize();
 	}
-
+	
 	@Test
 	public void deveAcessarPagina() {
-		Americanas.acessarPagina(driver);
+		Americanas.acessarPagina();
 		
-	}
-	
-	@Test
-	public void deveRealizarPesquisa() {
-		Americanas.clicarNaCaixaDePesquisaEDigitar();
-	}
-
-	@Test
-	public void deveCapturaMensagemDeErro() {
-		Americanas.capturaMensagemDeErro();
-	}
-	
-	@Test
-	public void deveTrocarEndereco() {
-		Americanas.trocarEndereco();
 	}
 }
